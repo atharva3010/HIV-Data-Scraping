@@ -1,9 +1,12 @@
 from newspaper import Article
 
-url = "https://timesofindia.indiatimes.com/city/chennai/hiv-blood-tranfusion-tamil-nadu-govt-assures-action-against-officials/articleshow/67394202.cms"
+hiv_paper = newspaper.build('https://timesofindia.indiatimes.com/topic/HIV/news')
+
+for article in hiv_paper.articles:
+    print(article.url)
 
 
-hiv_article = Article(url, language="en")  
+hiv_article = hiv_paper.articles[0]
 
 hiv_article.download()
 
